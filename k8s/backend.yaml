@@ -42,10 +42,10 @@ spec:
 #                secretKeyRef:
 #                  name: jwt-secret
 #                  key: JWT_SECRETKEY
-#            - name: HTTP_PROXY
-#              value: http://krmp-proxy.9rum.cc:3128
-#            - name: HTTPS_PROXY
-#              value: http://krmp-proxy.9rum.cc:3128
+            - name: HTTP_PROXY
+              value: http://krmp-proxy.9rum.cc:3128
+            - name: HTTPS_PROXY
+              value: http://krmp-proxy.9rum.cc:3128
 
           ports:
             - containerPort: 8080
