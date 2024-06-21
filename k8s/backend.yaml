@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
         - name: backend
-          # 여러분의 backend image 주소를 입력해주세요..
-          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_afe2ffadffdb
+          # 여러분의 backend image 주소를 입력해주세요.
+          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_693a7baa2398
           env:
             - name: TZ
               value: Asia/Seoul
@@ -25,27 +25,16 @@ spec:
               value: root
             - name: SPRING_DATASOURCE_PASSWORD
               value: root
-#            # KAKAO_OUATH_KEY 추가
-#            - name: KAKAO_OAUTH_CLIENT_ID
-#              valueFrom:
-#                secretKeyRef:
-#                  name: oauth-secret
-#                  key: KAKAO_OAUTH_CLIENT_ID
-#            - name: KAKAO_OAUTH_CLIENT_SECRET
-#              valueFrom:
-#                secretKeyRef:
-#                  name: oauth-secret
-#                  key: KAKAO_OAUTH_CLIENT_SECRET
-            # JWT_KEY 추가
-#            - name: JWT_SECRETKEY
-#              valueFrom:
-#                secretKeyRef:
-#                  name: jwt-secret
-#                  key: JWT_SECRETKEY
+            - name: JWT_SECRETKEY
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secret
+                  key: JWT_SECRETKEY
             - name: HTTP_PROXY
               value: http://krmp-proxy.9rum.cc:3128
             - name: HTTPS_PROXY
               value: http://krmp-proxy.9rum.cc:3128
+
 
           ports:
             - containerPort: 8080
